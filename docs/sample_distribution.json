@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "discord": {
         "clientId": "385581240906022916",
-        "smallImageText": "WesterosCraft",
+        "smallImageText": "BeyondSurvival",
         "smallImageKey": "seal-circle"
     },
     "java": {
@@ -11,16 +11,16 @@
     "rss": "https://forum.westeroscraft.com/forum/news.2/index.rss",
     "servers": [
         {
-            "id": "WesterosCraft-1.11.2",
-            "name": "WesterosCraft Production Server",
+            "id": "BeyondSurvival-1.20.1",
+            "name": "BeyondSurvival",
             "description": "Main WesterosCraft server. Connect to enter the Realm.",
             "icon": "http://mc.westeroscraft.com/WesterosCraftLauncher/files/server-prod.png",
-            "version": "3.9.4",
-            "address": "mc.westeroscraft.com",
-            "minecraftVersion": "1.11.2",
+            "version": "1.20.1",
+            "address": "beyondsurvival.duckdns.org",
+            "minecraftVersion": "1.20.1",
             "discord": {
-                "shortId": "Production",
-                "largeImageText": "WesterosCraft Production Server",
+                "shortId": "AlphaTech",
+                "largeImageText": "By AlphaTech",
                 "largeImageKey": "server-prod"
             },
             "mainServer": true,
