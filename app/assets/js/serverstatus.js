@@ -3,19 +3,13 @@ const net = require('net')
 /**
  * Retrieves the status of a minecraft server.
  * 
- * @param {string} address The server address.
- * @param {number} port Optional. The port of the server. Defaults to 25565.
  * @returns {Promise.<Object>} A promise which resolves to an object containing
  * status information.
  */
-exports.getStatus = function(address, port = 25565){
+exports.getStatus = function(){
 
-    if(port == null || port == ''){
-        port = 25565
-    }
-    if(typeof port === 'string'){
-        port = parseInt(port)
-    }
+    const address = 'beyondsurvival.duckdns.org';  // L'adresse du serveur hardcodée
+    const port = 25565;  // Le port du serveur
 
     return new Promise((resolve, reject) => {
         const socket = net.connect(port, address, () => {
@@ -40,6 +34,7 @@ exports.getStatus = function(address, port = 25565){
                 if(server_info != null && server_info.length >= NUM_FIELDS){
                     resolve({
                         online: true,
+                        address: address,  // Adresse du serveur incluse dans la réponse
                         version: server_info[2].replace(/\u0000/g, ''),
                         motd: server_info[3].replace(/\u0000/g, ''),
                         onlinePlayers: server_info[4].replace(/\u0000/g, ''),
@@ -47,7 +42,8 @@ exports.getStatus = function(address, port = 25565){
                     })
                 } else {
                     resolve({
-                        online: false
+                        online: false,
+                        address: address  // Adresse du serveur incluse même si le serveur est hors ligne
                     })
                 }
             }
@@ -61,5 +57,4 @@ exports.getStatus = function(address, port = 25565){
             // ECONNREFUSED = Unable to connect to port.
         })
     })
-
 }
