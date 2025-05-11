@@ -852,3 +852,22 @@ async function loadNews(){
 
     return await promise
 }
+
+// Fonction pour jouer la musique
+function playMusic() {
+    // Créer un objet audio avec le chemin vers ton fichier
+    var audio = new Audio('chemin/vers/ton_fichier_audio.mp3');
+
+    // Jouer la musique dès le chargement du fichier
+    audio.play();
+
+    // Réduire le volume à 50%
+    audio.volume = 0.5;
+
+    // Jouer la musique en boucle
+    audio.loop = true;
+}
+
+// Appel de la fonction pour jouer la musique dès le chargement de la page
+window.onload = playMusic;
+
