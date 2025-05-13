@@ -4,7 +4,7 @@ const ConfigManager = require('./configmanager')
 
 // Old WesterosCraft url.
 // exports.REMOTE_DISTRO_URL = ''
-exports.REMOTE_DISTRO_URL = 'http://beyondsurvival.duckdns.org/MODPACK1.0.0.mrpack'
+exports.REMOTE_DISTRO_URL = 'http://beyondsurvival.duckdns.org/nebula/distribution.json'
 
 const api = new DistributionAPI(
     ConfigManager.getLauncherDirectory(),
